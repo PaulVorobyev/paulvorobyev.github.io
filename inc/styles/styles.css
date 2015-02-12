@@ -153,32 +153,46 @@ body {
 }
 .container {
   width: 600px;
-  height: 300px;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
+  height: 30%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 .container h1 {
-  font-size: 5em;
+  font-size: 5rem;
 }
 .container h1 span {
   color: #27ae60;
 }
 .container h2 {
-  text-align: right;
   margin-top: 10px;
+}
+.container h2 span {
+  color: #27ae60;
 }
 .container .links {
   margin-top: 25px;
   text-align: center;
 }
-.container .links a:link {
+.container .links a:link,
+.container .links a:visited {
   text-decoration: none;
   color: #27ae60;
 }
 .container .links a:hover {
-  color: red;
+  color: #ff8547;
+}
+@media all and (max-width: 800px) {
+  .container {
+    margin-left: 20px;
+  }
+  .container .links {
+    text-align: left !important;
+  }
+  .container h1 {
+    font-size: 3em;
+  }
 }

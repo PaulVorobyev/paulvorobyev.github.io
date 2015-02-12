@@ -6,38 +6,52 @@ body{
 
 .container{
   width: 600px;
-  height: 300px;
+  height: 30%;
 
-  position: absolute !important;
-    top:0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
+  position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
   margin: auto;
 
   h1{
-    font-size: 5em;
+    font-size: 5rem;
     span{
       color: #27ae60;
     }
   }
   h2{
-    text-align: right;
     margin-top: 10px;
+    span{
+      color: #27ae60;
+    }
   }
   .links{
     margin-top: 25px;
     text-align: center;
-    // color: #e67e22;
     
-    a:link{
+    a:link, a:visited{
       text-decoration: none;
       color: #27ae60;
     }
 
     a:hover{
-      color: orange;
+      color: #ff8547;
+    }
+  }
+}
+
+@media all and (max-width: 800px){
+  .container{
+    margin-left: 20px;
+    .links{
+      text-align: left !important;
+    }
+
+    h1{
+      font-size: 3em;
     }
   }
 }
