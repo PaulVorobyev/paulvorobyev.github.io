@@ -1,3 +1,9 @@
 .DS_Store
 .DS_Store?
 ._*
+node_modules
+.sass-cache
+.bowerrc
+.bower.json
+*.txt
+npm-debug.log
