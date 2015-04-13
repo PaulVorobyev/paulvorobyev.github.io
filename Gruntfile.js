@@ -7,23 +7,34 @@ module.exports = function(grunt){
                     yuicompress: true
                 },
                 files: {
-                    "./inc/styles/styles.css": "./inc/styles/importer.less"
+                    "dist/inc/styles/styles.css": "src/inc/styles/importer.less"
+                }
+            }
+        },
+
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    'index.html': 'src/index.html'
                 }
             }
         },
 
         watch: {
-            less: {
-                files: ['inc/styles/**/*.less', 'inc/scripts/**/*.js', './*.html'],
-                tasks: ['less']              
+            src: {
+                files: ['src/inc/styles/**/*.less', 'src/inc/scripts/**/*.js', 'src/*.html'],
+                tasks: ['less','htmlmin']              
             }
         }
     });
     
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['watch:less']);
+    grunt.registerTask('default', ['watch:src']);
 };
