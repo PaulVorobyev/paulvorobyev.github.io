@@ -36,7 +36,7 @@ body{
   }
 
   .myNameIs {
-      margin-top: -10px !important;
+      margin-top: -10px;
   }
   
   .links{
@@ -46,12 +46,15 @@ body{
     font-size: 2rem;
 
     margin-top: 50px;
+    a:link, a:visited {
+       color: white;
+   }
+
     a:link{
       text-decoration: none;
       &:not(:first-child) {
          margin-left: 10px; 
       }
-      color: white;
     }
 
     a:hover{
@@ -62,13 +65,30 @@ body{
 
 @media all and (max-width: 800px){
   .container{
-    margin-left: 20px;
+    .hello,
+    .myNameIs {
+        font-size: 2rem;
+    }
+    
+    .myNameIs {
+        margin-top: 0px !important;
+    }
+
     .links{
+      width: 100%;
       text-align: left !important;
+
+      a:link {
+        display: block;
+        &:not(:first-child) {
+            margin-left: 0px;
+        }
+      }
     }
 
     h1{
       font-size: 3em;
+      margin-top: 0;
     }
   }
 }
